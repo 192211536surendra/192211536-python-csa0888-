@@ -1,0 +1,14 @@
+def is_palindrome(x):
+    
+    if x < 0:
+        return False
+    return str(x) == str(x)[::-1]
+
+
+test_cases = [121, -121, 10, "abc", 0]
+for x in test_cases:
+    print(f"Input: x = {x}")
+    if isinstance(x, int):
+        print("Output:", is_palindrome(x))
+    else:
+        print("Output: false (Invalid Input)")
