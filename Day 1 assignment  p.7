@@ -1,0 +1,26 @@
+import math
+
+def count_sorted_vowel_strings(n):
+    if n < 1:
+        return 0
+
+    total_strings = 0
+    vowels = 5  # Number of vowel choices (a, e, i, o, u)
+
+    for i in range(1, n + 1):
+        # Calculate the number of combinations for each position
+        combinations = math.comb(vowels, i)
+        total_strings += combinations
+
+    return total_strings
+
+# Test cases
+test_cases = [1, 2, 33, -5, 10]
+
+for n in test_cases:
+    print(f"Input: n = {n}")
+    if n >= 0:
+        print("Output:", count_sorted_vowel_strings(n))
+    else:
+        print("Output: Invalid Input (n < 1)")
+    print()
