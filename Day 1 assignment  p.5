@@ -1,0 +1,28 @@
+def calculate_price(num_fresh_loaves, num_day_old_loaves):
+    fresh_loaf_price = 185
+    day_old_discount = 0.60  # 60% discount
+
+    fresh_loaf_amount = num_fresh_loaves * fresh_loaf_price
+    day_old_loaf_amount = num_day_old_loaves * fresh_loaf_price * (1 - day_old_discount)
+    total_amount = fresh_loaf_amount + day_old_loaf_amount
+
+    return fresh_loaf_amount, day_old_loaf_amount, total_amount
+
+def main():
+    num_fresh_loaves = int(input("Enter the number of fresh loaves purchased: "))
+    num_day_old_loaves = int(input("Enter the number of day old loaves purchased: "))
+    
+    fresh_loaf_amount, day_old_loaf_amount, total_amount = calculate_price(num_fresh_loaves, num_day_old_loaves)
+
+    print(f"Regular price: Rs.{fresh_loaf_amount:.2f}")
+    print(f"Amount of new loaves: Rs.{fresh_loaf_amount:.2f}")
+    print(f"Amount of day old loaves: Rs.{day_old_loaf_amount:.2f}")
+    print(f"Total amount: Rs.{total_amount:.2f}")
+
+
+
+test_cases = [(4, 6), (-1, 5), (0, 6), (7, 8), (3, 4)]
+for test_case in test_cases:
+    print(f"Test case: fresh_loaves = {test_case[0]}, day_old_loaves = {test_case[1]}")
+    main()
+    print()
