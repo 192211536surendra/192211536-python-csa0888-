@@ -1,0 +1,45 @@
+def remove_common_words(s1, s2):
+    words1 = s1.split()
+    words2 = s2.split()
+    
+    common_words = set(words1) & set(words2)
+    
+    new_s1 = " ".join([word for word in words1 if word not in common_words])
+    new_s2 = " ".join([word for word in words2 if word not in common_words])
+    
+    return new_s1, new_s2
+
+# Test cases
+s1 = "sky is blue in color"
+s2 = "Raj likes sky blue color"
+new_s1, new_s2 = remove_common_words(s1, s2)
+print(new_s1)
+print(new_s2)
+print()
+
+s1 = "learn python"
+s2 = "python is easy to learn"
+new_s1, new_s2 = remove_common_words(s1, s2)
+print(new_s1)
+print(new_s2)
+print()
+
+s1 = "raju likes apple"
+s2 = "apple is red in color"
+new_s1, new_s2 = remove_common_words(s1, s2)
+print(new_s1)
+print(new_s2)
+print()
+
+s1 = "sita likes orange"
+s2 = "orange is rich in anti-oxidants"
+new_s1, new_s2 = remove_common_words(s1, s2)
+print(new_s1)
+print(new_s2)
+print()
+
+s1 = "raj is travelling to Chennai in train"
+s2 = "the rain will reach Chennai at 8pm"
+new_s1, new_s2 = remove_common_words(s1, s2)
+print(new_s1)
+print(new_s2)
